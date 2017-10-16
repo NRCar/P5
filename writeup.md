@@ -19,6 +19,13 @@ The goals / steps of this project are the following:
 [heat6]: ./output_images/heat6.png
 [video1]: ./proccessed_project_video.mp4
 
+[frame1]: ./output_images/frame1.png
+[frame2]: ./output_images/frame2.png
+[frame3]: ./output_images/frame3.png
+[frame4]: ./output_images/frame4.png
+[frame5]: ./output_images/frame5.png
+[frame6]: ./output_images/frame6.png
+
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
@@ -104,14 +111,12 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ### Here are six frames and their corresponding heatmaps:
 
-![alt text][image5]
-
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
-
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
-
+![Frame 1][frame1]
+![Frame 2][frame2]
+![Frame 3][frame3]
+![Frame 4][frame4]
+![Frame 5][frame5]
+![Frame 6][frame6]
 
 
 ---
@@ -121,5 +126,5 @@ Here's an example result showing the heatmap from a series of frames of video, t
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 The compuation time of the pipeline was large  and still produced false positives. The pipeline also identified the cars on the road on the other side with traffic in the opposite direction.
-Overall it doesnt seem to be something that can be used for real time detection.
+Overall it doesnt seem to be something that can be used for real time detection... perhaps using a CNN might be something to explore if that is our goal
 
