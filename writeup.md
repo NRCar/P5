@@ -76,7 +76,7 @@ I decided to just try one scale in the sliding window of 1.5 and that seemed wor
 
 ![test image 1][test1]
 
-![test image 1][test1]
+![test image 2][test6]
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
@@ -85,7 +85,7 @@ I used a heat map + thresholded the image ..which provided a nice result.  Here 
 
 
 ![Pipeline 1][heat1]
-![Pipeline 2][heat2]
+![Pipeline 2][heat6]
 ---
 
 ### Video Implementation
@@ -96,11 +96,11 @@ Here's a [link to my video result](./proccessed_project_video.mp4)
 ![My processed video][video1]
 
 
-####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
+#### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
 I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
 
-Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
+Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video as seen in the images below:
 
 ### Here are six frames and their corresponding heatmaps:
 
@@ -116,9 +116,10 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ---
 
-###Discussion
+### Discussion
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The compuation time of the pipeline was large  and still produced false positives. The pipeline also identified the cars on the road on the other side with traffic in the opposite direction.
+Overall it doesnt seem to be something that can be used for real time detection.
 
